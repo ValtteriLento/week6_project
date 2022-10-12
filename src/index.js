@@ -76,4 +76,42 @@ function initializeCode() {
 
     return data;
   };
+
+  const buildChart = async () => {
+    const data = await getData();
+    console.log(data);
+
+    const years = Object.values(data.dimension.Vuosi.category.label);
+    const areas = Object.values(data.dimension.Alue.category.label);
+    const values = data.value;
+
+    console.log(years);
+    console.log(areas);
+    console.log(values);
+
+    areas.forEach((municipality, index) => {
+      let populationGrowth = [];
+      for (let i = 0; i < 22; i++) {
+        populationGrowth.push(values[i + index]);
+      }
+      areas[index] = {
+        name: municipality,
+        values: populationGrowth,
+      };
+    });
+
+    const chartData = {
+      labels: years,
+      datasets: areas,
+    };
+    const chart = new frappe.Chart("#chart", {
+      title: "Population growth in a municipality in Finland",
+      data: chartData,
+      type: "line",
+      height: 450,
+      color: "#eb5146",
+    });
+  };
+
+  buildChart();
 }
