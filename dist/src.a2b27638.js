@@ -196,6 +196,57 @@ function initializeCode() {
       return _ref.apply(this, arguments);
     };
   }();
+  var buildChart = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var data, years, areas, values, chartData, chart;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return getData();
+            case 2:
+              data = _context2.sent;
+              console.log(data);
+              years = Object.values(data.dimension.Vuosi.category.label);
+              areas = Object.values(data.dimension.Alue.category.label);
+              values = data.value;
+              console.log(years);
+              console.log(areas);
+              console.log(values);
+              areas.forEach(function (municipality, index) {
+                var populationGrowth = [];
+                for (var i = 0; i < 22; i++) {
+                  populationGrowth.push(values[i + index]);
+                }
+                areas[index] = {
+                  name: municipality,
+                  values: populationGrowth
+                };
+              });
+              chartData = {
+                labels: years,
+                datasets: areas
+              };
+              chart = new frappe.Chart("#chart", {
+                title: "Population growth in a municipality in Finland",
+                data: chartData,
+                type: "line",
+                height: 450,
+                color: "#eb5146"
+              });
+            case 13:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return function buildChart() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  buildChart();
 }
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -222,7 +273,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37129" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37653" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
