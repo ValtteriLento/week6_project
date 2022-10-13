@@ -1,3 +1,5 @@
+import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
+
 if (document.readyState !== "loading") {
   console.log("Document is ready!");
   initializeCode();
