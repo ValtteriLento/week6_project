@@ -89,14 +89,10 @@ function initializeCode() {
     console.log(areas);
     console.log(values);
 
-    areas.forEach((municipality, index) => {
-      let populationGrowth = [];
-      for (let i = 0; i < 22; i++) {
-        populationGrowth.push(values[i + index]);
-      }
+    areas.forEach((area, index) => {
       areas[index] = {
-        name: municipality,
-        values: populationGrowth,
+        name: area,
+        values: values,
       };
     });
 
