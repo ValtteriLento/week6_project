@@ -3460,7 +3460,7 @@ function initializeCode() {
                 labels: years,
                 datasets: areas
               };
-              chart = new frappe.Chart("#chart", {
+              chart = new _frappeChartsMin.Chart("#chart", {
                 title: "Population growth in a municipality in Finland",
                 data: chartData,
                 type: "line",
@@ -3505,7 +3505,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35997" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40189" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
