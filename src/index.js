@@ -105,7 +105,7 @@ function initializeCode() {
       data: chartData,
       type: "line",
       height: 450,
-      color: "#eb5146",
+      colors: ["#eb5146"],
     });
   };
 
