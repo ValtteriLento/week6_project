@@ -3445,13 +3445,11 @@ function initializeCode() {
               return getData();
             case 2:
               data = _context2.sent;
-              console.log(data);
-              years = Object.values(data.dimension.Vuosi.category.label);
+              /*console.log(data);*/years = Object.values(data.dimension.Vuosi.category.label);
               areas = Object.values(data.dimension.Alue.category.label);
-              values = data.value;
-              console.log(years);
-              console.log(areas);
-              console.log(values);
+              values = data.value; /*console.log(years);
+                                   console.log(areas);
+                                   console.log(values);*/
               areas.forEach(function (area, index) {
                 areas[index] = {
                   name: area,
@@ -3469,7 +3467,7 @@ function initializeCode() {
                 height: 450,
                 colors: ["#eb5146"]
               });
-            case 13:
+            case 9:
             case "end":
               return _context2.stop();
           }

@@ -81,15 +81,15 @@ function initializeCode() {
 
   const buildChart = async () => {
     const data = await getData();
-    console.log(data);
+    /*console.log(data);*/
 
     const years = Object.values(data.dimension.Vuosi.category.label);
     const areas = Object.values(data.dimension.Alue.category.label);
     const values = data.value;
 
-    console.log(years);
+    /*console.log(years);
     console.log(areas);
-    console.log(values);
+    console.log(values);*/
 
     areas.forEach((area, index) => {
       areas[index] = {
