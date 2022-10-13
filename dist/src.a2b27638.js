@@ -214,14 +214,10 @@ function initializeCode() {
               console.log(years);
               console.log(areas);
               console.log(values);
-              areas.forEach(function (municipality, index) {
-                var populationGrowth = [];
-                for (var i = 0; i < 22; i++) {
-                  populationGrowth.push(values[i + index]);
-                }
+              areas.forEach(function (area, index) {
                 areas[index] = {
-                  name: municipality,
-                  values: populationGrowth
+                  name: area,
+                  values: values
                 };
               });
               chartData = {
@@ -273,7 +269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37653" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37551" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
